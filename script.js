@@ -30,7 +30,8 @@ function drawPlayer() {
 
     ctx.beginPath();
     ctx.moveTo(player.x + player.width / 2, player.y);
-    ctx.lineTo(player.x, player.width, player.y + player.height);
+    ctx.lineTo(player.x, player.y + player.height);
+    ctx.lineTo(player.x + player.width, player.y + player.height);
     ctx.closePath();
 
     ctx.fill();
@@ -75,7 +76,7 @@ function drawAsteroids() {
 
 function moveAsteroids() {
     asteroids.forEach((asteroid) => {
-    asteasteroid.y += asteroidSpeed;
+        asteroid.y += asteroidSpeed;
     });
 
     asteroids = asteroids.filter((asteroid) => asteroid.y < canvas.height + 50);
