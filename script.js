@@ -34,7 +34,6 @@ function drawPlayer() {
     ctx.lineTo(player.x, player.y + player.height);
     ctx.lineTo(player.x + player.width, player.y + player.height);
     ctx.closePath();
-git
     ctx.fill();
 }
 
