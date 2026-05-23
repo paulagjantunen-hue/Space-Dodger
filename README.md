@@ -31,36 +31,6 @@ In Space Dodger, the game area is rendered in a `<canvas>` element. The ship is 
 5. When you collide with an asteroid, a "GAME OVER" message appears.
 6. Refresh the page to restart the game.
 
-## Running the game
-
-### Option 1: Open `index.html` directly
-
-1. In the workspace, locate `index.html`.
-2. Open it in a browser.
-
-> Tip: Some browsers may treat local files differently, so using a web server is recommended for the most consistent experience.
-
-### Option 2: Run a local HTTP server
-
-From the project folder:
-
-```bash
-cd /workspaces/Space-Dodger
-python3 -m http.server 8000
-```
-
-Then open the browser and visit:
-
-```text
-http://localhost:8000
-```
-
-### Option 3: Use VS Code Live Server
-
-1. Install the `Live Server` extension in VS Code.
-2. Open `index.html` in the editor.
-3. Click `Go Live` from the status bar or right-click and choose `Open with Live Server`.
-
 ## Code structure
 
 ### `index.html`
