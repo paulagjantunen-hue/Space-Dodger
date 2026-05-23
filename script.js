@@ -15,6 +15,7 @@ let asteroids = [];
 let score = 0;
 let gameOver = false;
 let asteroidSpeed = 3;
+let lastTime = performance.now();
 
 // Controls
 window.addEventListener("keydown", (e) => {
@@ -113,7 +114,13 @@ function updateScore() {
     }
 }
 
-function gameLoop() {
+function gameLoop(currentTime) {
+    const deltaTime = (currentTime - lastTime) / 1000;
+    lastTime = currentTime;
+
+    player.x += playerSpeed * deltaTime;
+    
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (gameOver) {
@@ -137,4 +144,4 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-gameLoop();
+requestAnimationFrame (gameLoop);

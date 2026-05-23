@@ -161,6 +161,86 @@ Contributions are welcome! You can:
 
 If you want to contribute, fork the repository, make your changes, and submit a pull request.
 
+## Code walkthrough
+
+The key logic lives in `script.js`:
+
+- `drawPlayer()` draws the player ship as a simple triangle on the canvas.
+- `movePlayer()` checks keyboard state and updates the player position.
+- `createAsteroid()` generates a new asteroid object with random size and starting position.
+- `moveAsteroids()` advances every asteroid down the screen and removes offscreen asteroids.
+- `drawAsteroids()` renders each asteroid as a filled circle.
+- `checkCollision()` compares the player and asteroid bounds to determine collisions.
+- `updateScore()` increments the score and raises asteroid speed at set intervals.
+
+### How the game loop works
+
+The game loop is called repeatedly with `requestAnimationFrame(gameLoop)`. Each frame it:
+
+1. Clears the canvas.
+2. Moves the player and asteroids.
+3. Spawns new asteroids randomly.
+4. Draws the player and asteroids.
+5. Checks for collisions.
+6. Updates the score.
+7. Requests the next frame if the game is still running.
+
+## Debugging and testing
+
+If you want to debug the game, use the browser developer tools:
+
+- Open the console to see any runtime errors.
+- Use breakpoints in `script.js` to step through the game loop.
+- Inspect the `player` and `asteroids` objects by logging them.
+- Try changing the asteroid spawn rate, speed, or player speed to observe behavior.
+
+## Known limitations
+
+- The game uses a single player rectangle, not a sprite.
+- There is no pause or restart button inside the UI.
+- The collision shape is rectangular rather than matching the triangle exactly.
+- The score increases every frame, not by time-based measurement.
+- There is no sound or mobile touch control support yet.
+
+## How to extend this project
+
+### Add sound
+
+- Load audio files in `index.html` or JavaScript.
+- Play sound effects for movement, collisions, and scoring.
+
+### Add better graphics
+
+- Replace the triangle player with an image sprite.
+- Draw asteroids with texture or multiple shapes.
+
+### Add a restart button
+
+- Add a button to `index.html`.
+- Reset the game state inside `script.js` when the player clicks it.
+
+### Add a high-score system
+
+- Store the highest score in `localStorage`.
+- Display the best score in the UI.
+
+### Add levels and power-ups
+
+- Increase asteroid count or speed by level.
+- Add temporary shields, slow time, or bonus pickups.
+
+## Project history
+
+This project started as a learning exercise to combine:
+
+- HTML canvas rendering
+- JavaScript game loops
+- Keyboard event handling
+- Simple collision detection
+- Basic game state management
+
+It is intended as an easy game for beginners to read, run, and expand.
+
 ## License
 
 This project is free to use and modify. There is no official license included by default.
